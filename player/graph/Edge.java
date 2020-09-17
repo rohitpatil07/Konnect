@@ -1,4 +1,4 @@
-package graph;
+package player.graph;
 
 class Edge{
     public static int NORTH = 1;
