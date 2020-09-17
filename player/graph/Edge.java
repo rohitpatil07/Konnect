@@ -1,14 +1,14 @@
 package player.graph;
 
 class Edge{
-    public static int NORTH = 1;
-    public static int SOUTH = 1;
-    public static int EAST = 2;
-    public static int WEST = 2;
-    public static int NORTHEAST = 3;
-    public static int SOUTHWEST = 3;
-    public static int SOUTHEAST = 4;
-    public static int NORTHWEST = 4;
+    public static final int NORTH = 1;
+    public static final int SOUTH = 1;
+    public static final int EAST = 2;
+    public static final int WEST = 2;
+    public static final int NORTHEAST = 3;
+    public static final int SOUTHWEST = 3;
+    public static final int SOUTHEAST = 4;
+    public static final int NORTHWEST = 4;
     
     Vertex a;
     Vertex b;

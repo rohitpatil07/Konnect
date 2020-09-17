@@ -11,8 +11,8 @@ class Vertex{
     private static int nextBlackVertexNumber = 1;
     private static int nextWhiteVertexNumber = 1;
 
-    public static int WHITE = 1;
-    public static int BLACK = 2;
+    public static final int WHITE = 1;
+    public static final int BLACK = 2;
 
 
     public Vertex(int color, int x, int y) throws InvalidNodeException{
