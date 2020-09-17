@@ -1,11 +1,14 @@
 package player.graph;
 
+import java.util.HashMap;
+
 class Vertex{
 
     int color;
     int x;
     int y;
     int vertexNumber;
+    HashMap<Vertex, Edge> map;
 
 
     private static int nextBlackVertexNumber = 1;
@@ -18,6 +21,8 @@ class Vertex{
     public Vertex(int color, int x, int y) throws InvalidNodeException{
         this.x = x;
         this.y = y;
+        this.map = new HashMap<Vertex, Edge>();
+
         if((color != WHITE) && (color != BLACK)){
             throw new InvalidNodeException("Invalid color provided to vertex.");
         }
@@ -59,6 +64,10 @@ class Vertex{
     public void setXY(int x, int y){
         this.x = x;
         this.y = y;
+    }
+
+    public HashMap<Vertex, Edge> getMap(){
+        return this.map;
     }
 
 }
