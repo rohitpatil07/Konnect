@@ -33,7 +33,7 @@ class Graph{
 
     public ArrayList<Edge> edges(){
         ArrayList<Edge> edgeList = new ArrayList<Edge>();
-        for(Edge e : edgeList){
+        for(Edge e : EdgeList){
             edgeList.add(e);
         }
         return edgeList;
@@ -81,6 +81,7 @@ class Graph{
         a.put(v,edge);
         a = v.getMap();
         a.put(u,edge);
+        EdgeList.add(edge);
         return edge;
     }
 
@@ -90,15 +91,27 @@ class Graph{
         return a;
     }
 
+    public Vertex insertVertex(Vertex v){
+        VertexList.remove(v);
+        return v;
+    }
+
     public void removeEdge(Edge e){
         EdgeList.remove(e);
+        Vertex u = e.a;
+        Vertex v = e.b;
+        HashMap<Vertex, Edge> a = u.getMap();
+        a.remove(v);
+        a = v.getMap();
+        a.remove(u); 
     }
 
     public void removeVertex(Vertex v){
-        HashMap<Vertex, Edge> a = v.getMap();
-        for(Vertex ve: a.keySet()){
-            EdgeList.remove(a.get(ve));
+        for(Edge edge: outGoingEdges(v)){
+            removeEdge(edge);
         }
+        VertexList.remove(v);
+
     }
 
 }
